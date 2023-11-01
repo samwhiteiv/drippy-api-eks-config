@@ -1,22 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: drippy-api
+  name: drippy-api-eks
 spec:
+  replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: drippy-api
+      app: drippy-api-eks
   replicas: 2
   template:
     metadata:
       labels:
-        app: drippy-api
+        app: drippy-api-eks
     spec:
       containers:
-        - name: drippy-api
+        - name: drippy-api-eks
           image: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks:latest
           ports:
             - containerPort: 8000
+
 # spec:
 #  containers:
 #  - name: your-app-container
