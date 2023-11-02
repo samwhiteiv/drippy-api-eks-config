@@ -1,26 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: drippy-api-eks
+  name: drippy-api
+  namespace: drippy-api
+  labels:
+    app: drippy-api
 spec:
-  replicas: 1
-  revisionHistoryLimit: 3
+  replicas: 0
+  # revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: drippy-api-eks
-  replicas: 2
+      app: drippy-api
   template:
     metadata:
       labels:
-        app: drippy-api-eks
+        app: drippy-api
     spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
       containers:
         - name: drippy-api-eks
           image: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks:latest
           ports:
-            - containerPort: 8000
-
-# spec:
-#  containers:
-#  - name: your-app-container
-#    image: <YOUR_ECR_REPO_URL>/your-app:latest
+            - name: http
+              containerPort: 8080
+          env:
+            - name: APP_URL
+              value: https://upstream.tackle.io
