@@ -7,7 +7,6 @@ metadata:
     app: drippy-api
 spec:
   replicas: 2
-  # revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: drippy-api
@@ -16,8 +15,6 @@ spec:
       labels:
         app: drippy-api
     spec:
-      nodeSelector:
-        "beta.kubernetes.io/os": linux
       containers:
         - name: drippy-api-eks
           image: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks:latest
@@ -26,4 +23,4 @@ spec:
               containerPort: 8080
           env:
             - name: APP_URL
-              value: https://upstream.tackle.io
+              value: https://www.google.com

@@ -15,6 +15,8 @@ spec:
         app: drippy-api-eks
     spec:
       containers:
+        nodeSelector:
+          "beta.kubernetes.io/os": linux
         - name: drippy-api-eks
           image: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks:latest
           ports:

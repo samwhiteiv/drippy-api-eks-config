@@ -6,17 +6,5 @@ resources:
   - namespace.yaml
 namespace: drippy-api
 images:
-  - name: aks-nodejs-argocd
-    newName: aks-nodejs-argocd
+  - name: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks
     newTag: latest
-images:
-- name: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks
-  newTag: latest
-
-# images:
-# - name: 730998372749.dkr.ecr.us-west-2.amazonaws.com/tackle-gql
-#  newTag: 63604accc5a776551adeb6b7e694f74537c57d30
-# images:
-  # - name: aks-nodejs-argocd
-  #  newName: aks-nodejs-argocd
-  #  newTag: latest
