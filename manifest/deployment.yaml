@@ -6,7 +6,7 @@ metadata:
   labels:
     app: drippy-api
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: drippy-api
@@ -16,11 +16,10 @@ spec:
         app: drippy-api
     spec:
       containers:
-        - name: drippy-api-eks
+        - name: drippy-api
           image: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks:latest
           ports:
-            - name: http
-              containerPort: 8080
+            - containerPort: 8080
           env:
             - name: APP_URL
               value: https://www.google.com
