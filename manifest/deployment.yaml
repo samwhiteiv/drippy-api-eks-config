@@ -6,7 +6,7 @@ metadata:
   labels:
     app: drippy-api
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: drippy-api
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: drippy-api
-          image: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks:latest
+          image: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks:13d08d22cdd5a401afb45d25980bc59da71b52c1
           ports:
             - containerPort: 8080
           env:
