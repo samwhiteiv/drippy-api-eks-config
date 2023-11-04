@@ -7,4 +7,4 @@ resources:
 namespace: drippy-api
 images:
   - name: 290738313620.dkr.ecr.us-east-1.amazonaws.com/drippy-api-eks
-    newTag: 13d08d22cdd5a401afb45d25980bc59da71b52c1
+    newTag: b15932e6d639940c1bcb0aaacd06e0e0b038d55b
